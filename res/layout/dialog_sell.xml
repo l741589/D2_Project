@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RadioGroup
+        android:id="@+id/radioGroup1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <RadioButton
+            android:id="@+id/radio0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="卖到系统商店" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:id="@+id/TextView01"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:text="￥"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:text="Large Text"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        </LinearLayout>
+
+        <RadioButton
+            android:id="@+id/radio1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="在用户商店寄售" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:text="￥"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <EditText
+                android:id="@+id/editText1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:enabled="false"
+                android:inputType="number" />
+
+        </LinearLayout>
+
+    </RadioGroup>
+
+</LinearLayout>

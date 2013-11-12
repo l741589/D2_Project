@@ -28,6 +28,9 @@
         <activity android:name="UserActivity"></activity>
         <activity android:name="RoadMaskedMapActivity"></activity>
         <activity android:name="NeighborActivity"></activity>
+        <activity android:name="StoreActivity"></activity>
+        <activity android:name="ItemActivity"></activity>
+        <activity android:name="AchievementActivity"></activity>
     </application>
 
 </manifest>

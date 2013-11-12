@@ -3,6 +3,7 @@ package com.example.d2_project;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -41,6 +42,9 @@ public class MainActivity extends BaseActivity implements OnClickListener{
 		switch(id){
 		case R.id.button1:return FriendActivity.class;
 		case R.id.button2:return NeighborActivity.class;
+		case R.id.button3:return StoreActivity.class;
+		case R.id.button4:return ItemActivity.class;
+		case R.id.button5:return AchievementActivity.class;
 		}
 		return null;
 	}
