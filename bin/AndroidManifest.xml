@@ -32,6 +32,26 @@
         <activity android:name="ItemActivity"></activity>
         <activity android:name="AchievementActivity"></activity>
         <activity android:name="FriendMapActivity"></activity>
+		<activity
+            android:name="com.example.d2_project.MissionActivity"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name="com.example.d2_project.MissionOnMapActivity"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name="com.example.d2_project.RankingListActivity"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name="com.example.d2_project.ParkingActivity"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name="com.example.d2_project.ReleaseActivity"
+            android:screenOrientation="landscape" >
+        </activity>
     </application>
 
 </manifest>

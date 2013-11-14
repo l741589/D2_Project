@@ -2,6 +2,9 @@ package com.example.d2_project;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.AlertDialog.Builder;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.util.Log;
 import android.view.Menu;
@@ -24,6 +27,23 @@ public class MainActivity extends BaseActivity implements OnClickListener{
 		findViewById(R.id.button8).setOnClickListener(this);
 		findViewById(R.id.button9).setOnClickListener(this);
 		findViewById(R.id.button10).setOnClickListener(this);
+		
+		AlertDialog.Builder builder = new Builder(MainActivity.this);
+		builder.setMessage("这里是免责声明。。。。").setTitle("免责声明");
+		builder.setPositiveButton("同意", new DialogInterface.OnClickListener() {
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				dialog.dismiss();
+			}
+		});
+		builder.setNegativeButton("拒绝", new DialogInterface.OnClickListener() {
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				dialog.dismiss();
+				MainActivity.this.finish();
+			}
+		});
+		builder.create().show();
 	}
 
 	@Override
@@ -45,6 +65,10 @@ public class MainActivity extends BaseActivity implements OnClickListener{
 		case R.id.button3:return StoreActivity.class;
 		case R.id.button4:return FriendMapActivity.class;
 		case R.id.button5:return AchievementActivity.class;
+		case R.id.button6:return MissionActivity.class;
+		case R.id.button7:return ParkingActivity.class;
+		case R.id.button8:return RankingListActivity.class;
+		case R.id.button9:return ReleaseActivity.class;
 		case R.id.button10:return UserActivity.class;
 		}
 		return null;

@@ -356,16 +356,17 @@ public final class R {
         public static final int magnifier_64=0x7f020146;
         public static final int map_friend=0x7f020147;
         public static final int map_roadmasked=0x7f020148;
-        public static final int minus_64=0x7f020149;
-        public static final int plus_64=0x7f02014a;
+        public static final int map_task=0x7f020149;
+        public static final int minus_64=0x7f02014a;
+        public static final int plus_64=0x7f02014b;
     }
     public static final class id {
-        public static final int FrameLayout1=0x7f090027;
+        public static final int FrameLayout1=0x7f090028;
         public static final int LinearLayout1=0x7f090007;
         public static final int LinearLayout2=0x7f090008;
         public static final int LinearLayout3=0x7f09000d;
-        public static final int TextView01=0x7f090025;
-        public static final int action_settings=0x7f090028;
+        public static final int TextView01=0x7f090026;
+        public static final int action_settings=0x7f090029;
         public static final int back=0x7f090000;
         public static final int button1=0x7f090004;
         public static final int button10=0x7f090012;
@@ -379,28 +380,29 @@ public final class R {
         public static final int button9=0x7f090011;
         public static final int editText1=0x7f090003;
         public static final int gridView1=0x7f090005;
-        public static final int gridView2=0x7f090017;
-        public static final int gridView3=0x7f090018;
+        public static final int gridView2=0x7f090018;
+        public static final int gridView3=0x7f090019;
         public static final int imageView1=0x7f090013;
         public static final int listView1=0x7f090002;
-        public static final int radio0=0x7f090024;
-        public static final int radio1=0x7f090026;
-        public static final int radioGroup1=0x7f090023;
-        public static final int tableRow1=0x7f09001a;
-        public static final int tableRow2=0x7f09001b;
-        public static final int tableRow3=0x7f09001c;
-        public static final int tableRow5=0x7f09001f;
+        public static final int listView2=0x7f090015;
+        public static final int radio0=0x7f090025;
+        public static final int radio1=0x7f090027;
+        public static final int radioGroup1=0x7f090024;
+        public static final int tableRow1=0x7f09001b;
+        public static final int tableRow2=0x7f09001c;
+        public static final int tableRow3=0x7f09001d;
+        public static final int tableRow5=0x7f090020;
         public static final int textView1=0x7f090001;
-        public static final int textView10=0x7f090019;
+        public static final int textView10=0x7f09001a;
         public static final int textView2=0x7f090006;
-        public static final int textView3=0x7f090014;
-        public static final int textView4=0x7f090015;
-        public static final int textView5=0x7f09001d;
-        public static final int textView6=0x7f09001e;
-        public static final int textView7=0x7f090022;
-        public static final int textView8=0x7f090020;
-        public static final int textView9=0x7f090021;
-        public static final int viewFlipper1=0x7f090016;
+        public static final int textView3=0x7f090016;
+        public static final int textView4=0x7f090017;
+        public static final int textView5=0x7f09001e;
+        public static final int textView6=0x7f09001f;
+        public static final int textView7=0x7f090023;
+        public static final int textView8=0x7f090021;
+        public static final int textView9=0x7f090022;
+        public static final int viewFlipper1=0x7f090014;
     }
     public static final class layout {
         public static final int activity_achievement=0x7f030000;
@@ -410,17 +412,28 @@ public final class R {
         public static final int activity_main=0x7f030004;
         public static final int activity_map_friend=0x7f030005;
         public static final int activity_map_roadmasked=0x7f030006;
-        public static final int activity_neighbor=0x7f030007;
-        public static final int activity_store=0x7f030008;
-        public static final int activity_user=0x7f030009;
-        public static final int dialog_sell=0x7f03000a;
-        public static final int griditem_friend=0x7f03000b;
-        public static final int griditem_item=0x7f03000c;
-        public static final int item_achievement=0x7f03000d;
-        public static final int item_road=0x7f03000e;
+        public static final int activity_mission=0x7f030007;
+        public static final int activity_mission_on_map=0x7f030008;
+        public static final int activity_neighbor=0x7f030009;
+        public static final int activity_parking=0x7f03000a;
+        public static final int activity_ranking_list=0x7f03000b;
+        public static final int activity_release=0x7f03000c;
+        public static final int activity_store=0x7f03000d;
+        public static final int activity_user=0x7f03000e;
+        public static final int dialog_sell=0x7f03000f;
+        public static final int griditem_friend=0x7f030010;
+        public static final int griditem_item=0x7f030011;
+        public static final int item_achievement=0x7f030012;
+        public static final int item_ranking_list=0x7f030013;
+        public static final int item_road=0x7f030014;
     }
     public static final class menu {
         public static final int main=0x7f080000;
+        public static final int mission=0x7f080001;
+        public static final int mission_on_map=0x7f080002;
+        public static final int parking=0x7f080003;
+        public static final int ranking_list=0x7f080004;
+        public static final int release=0x7f080005;
     }
     public static final class string {
         public static final int action_settings=0x7f060001;
