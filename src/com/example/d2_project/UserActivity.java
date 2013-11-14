@@ -1,5 +1,10 @@
 package com.example.d2_project;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import com.example.d2_project.data.User;
 
 import android.app.AlertDialog;
@@ -11,6 +16,7 @@ import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -42,11 +48,16 @@ public class UserActivity extends BaseActivity{
 		btn_del=(Button)findViewById(R.id.button2);
 		btn_talk=(Button)findViewById(R.id.button3);
 		btn_map=(Button)findViewById(R.id.button4);
+		u.point=0;
+		lv.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, roads));
 		
+		lv.setAdapter(new SimpleAdapter(this,getRoadsInfo(),R.layout.item_road
+				,new String[]{"name","info"},new int[]{R.id.textView1,R.id.textView2}));
+			
 		tv_name.setText(""+u.name.trim());
 		tv_money.setText(""+u.money);
 		tv_point.setText(""+u.point);
-		tv_level.setText(""+u.level);
+		tv_level.setText(""+u.level);		
 		
 		if (u.isFriend){
 			btn_add.setVisibility(View.GONE);
@@ -56,7 +67,7 @@ public class UserActivity extends BaseActivity{
 			btn_del.setVisibility(View.GONE);
 		}
 		
-		lv.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, roads));
+		
 		
 		btn_add.setOnClickListener(new OnClickListener() {			
 			@Override
@@ -89,5 +100,22 @@ public class UserActivity extends BaseActivity{
 				startActivity(i);
 			}
 		});
+	}
+	
+	private Map<String,String> buildInfo(String name,String info){
+		Map<String,String> map=new HashMap<String,String>();
+		map.put("name", name);
+		map.put("info", info);
+		return map;
+	}
+	
+	private List<Map<String,String>> getRoadsInfo(){
+		List<Map<String,String>> list=new ArrayList<Map<String,String>>();		
+		for(int i=0;i<10;++i){
+			int p=(int)(Math.random()*9999);
+			u.point+=p;			
+			list.add(buildInfo("道路名"+p, "积分:"+p));		
+		}
+		return list;
 	}
 }

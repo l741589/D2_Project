@@ -5,14 +5,19 @@ import java.util.List;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
 import android.text.SpannableString;
 import android.text.style.ImageSpan;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.d2_project.data.ColorUtil;
+import com.example.d2_project.data.ImgUtil;
 import com.example.d2_project.data.Item;
 import com.example.d2_project.data.User;
 
@@ -49,6 +54,7 @@ class ItemGridAdapter extends BaseAdapter{
 	public View getView(int position, View convertView, ViewGroup parent) {
 		View v=convertView;
 		if (v==null) v=((Activity)c).getLayoutInflater().inflate(R.layout.griditem_item, null);
+		LinearLayout ll=(LinearLayout)v.findViewById(R.id.LinearLayout2);
 		TextView tv1=(TextView) v.findViewById(R.id.textView1);
 		TextView tv2=(TextView) v.findViewById(R.id.textView2);
 		TextView tv3=(TextView) v.findViewById(R.id.textView3);
@@ -68,6 +74,11 @@ class ItemGridAdapter extends BaseAdapter{
 		}
 		
 		iv.setImageResource(Util.getResourceId(c.getResources(), u.icon));
+		
+		
+		//Bitmap b=ImgUtil.drawable2Bitmap(iv.getDrawable());
+		//ll.setBackgroundColor(b.getPixel(b.getWidth()/2, b.getHeight()/2));
+		ll.setBackgroundColor(ColorUtil.getRandomColor());
 		return v;
 	} 
 }

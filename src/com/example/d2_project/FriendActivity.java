@@ -43,7 +43,7 @@ public class FriendActivity extends BaseActivity implements OnItemClickListener,
 	}
 	
 	private User[] getUsers(){
-		User[] us=new User[1024];
+		User[] us=new User[256];
 		for (int i=0;i<us.length;++i){
 			User u=new User();
 			us[i]=u;
