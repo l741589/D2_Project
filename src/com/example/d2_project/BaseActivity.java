@@ -5,6 +5,7 @@ import android.content.pm.ActivityInfo;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
@@ -16,7 +17,26 @@ public class BaseActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+		
 		//changeFonts((ViewGroup)findViewById(android.R.id.content), this);
+	}
+	
+	@Override
+	protected void onStart() {
+		super.onStart();
+		View back=findViewById(R.id.back);
+		if (back!=null){
+			back.setOnClickListener(new OnClickListener() {				
+				@Override
+				public void onClick(View v) {
+					onBackClick();
+				}
+			});
+		}
+	}
+	
+	public void onBackClick(){
+		finish();
 	}
 	
 	public static void changeFonts(ViewGroup root, Activity act) {    

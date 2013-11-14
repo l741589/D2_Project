@@ -25,7 +25,7 @@ public class AddFriendActivity extends BaseActivity implements OnItemClickListen
 		gv=(GridView)findViewById(R.id.gridView1);
 		et=(EditText)findViewById(R.id.editText1);
 		btn=(Button)findViewById(R.id.button1);
-		btn.setOnClickListener(new OnClickListener() {			
+		btn.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				gv.setAdapter(new UserGridAdapter(AddFriendActivity.this, getUsers()));

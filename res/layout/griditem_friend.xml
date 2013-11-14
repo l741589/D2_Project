@@ -24,7 +24,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="left"
-            android:maxLines="1"
             android:text="sd"
             android:textAppearance="?android:attr/textAppearanceListItemSmall"
             android:textColor="#ffffff" />

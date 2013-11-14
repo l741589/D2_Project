@@ -147,7 +147,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@drawable/btnface0"
-                android:text="Button"
+                android:text="我"
                 android:textColor="#ffffff"
                 android:textSize="32sp" />
         </LinearLayout>

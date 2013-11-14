@@ -8,10 +8,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#d2d2d2"
+        android:gravity="center_vertical"
         android:paddingBottom="4dp"
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:paddingTop="4dp" >
+
+        <ImageButton
+            android:id="@+id/back"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginRight="8dp"
+            android:background="@null"
+            android:scaleType="fitXY"
+            android:src="@drawable/back" />
 
         <TextView
             android:id="@+id/textView1"
@@ -20,19 +30,22 @@
             android:text="好友"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
-        <FrameLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1" >
-
-        </FrameLayout>
-
-        <Button
-            android:id="@+id/button1"
-            android:layout_width="wrap_content"
+        <EditText
+            android:id="@+id/editText1"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="添加好友"
-            android:textAppearance="?android:attr/textAppearanceSmall" />
+            android:layout_weight="1"
+            android:ems="10"
+            android:visibility="invisible" />
+
+        <ImageButton
+            android:id="@+id/button1"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_gravity="center_vertical"
+            android:background="@null"
+            android:scaleType="fitXY"
+            android:src="@drawable/magnifier_64" />
 
     </LinearLayout>
 

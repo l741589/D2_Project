@@ -15,10 +15,13 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnTouchListener;
 import android.view.ViewDebug.FlagToString;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.GridView;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.AdapterView.OnItemLongClickListener;
 
@@ -26,16 +29,21 @@ public class FriendActivity extends BaseActivity implements OnItemClickListener,
 	
 	private GridView gv;
 	private TextView tv;
-	private Button btn;
+	private ImageButton btn;
+	private EditText et;
+	boolean searched=false;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_friend);
 		gv=(GridView)findViewById(R.id.gridView1);
-		btn=(Button)findViewById(R.id.button1);
+		btn=(ImageButton)findViewById(R.id.button1);
 		gv.setAdapter(new UserGridAdapter(this,getUsers()));
 		tv=(TextView)findViewById(R.id.textView1);
+		et=(EditText)findViewById(R.id.editText1);
+		et.setFocusable(true);
+		et.setFocusableInTouchMode(true);
 		gv.setOnItemLongClickListener(this);
 		gv.setOnTouchListener(this);
 		gv.setOnItemClickListener(this);
@@ -54,6 +62,22 @@ public class FriendActivity extends BaseActivity implements OnItemClickListener,
 			u.level=(int)(Math.random()*10);
 			if (Math.random()<0.1) u.isWhiteListed=true;
 			u.isFriend=true;
+		}
+		return us;
+	}
+	
+	private User[] getAddUsers(){
+		User[] us=new User[10];
+		for (int i=0;i<us.length;++i){
+			User u=new User();
+			int x=(int)(Math.random()*254);
+			us[i]=u;
+			u.face="@drawable/face"+x;
+			u.name="ÓÃ»§"+et.getText()+i;
+			u.money=(int)(Math.random()*10000);
+			u.point=(int)(Math.random()*10000);
+			u.level=(int)(Math.random()*10);
+			u.isFriend=false;
 		}
 		return us;
 	}
@@ -87,7 +111,30 @@ public class FriendActivity extends BaseActivity implements OnItemClickListener,
 
 	@Override
 	public void onClick(View v) {
-		startActivity(new Intent(this,AddFriendActivity.class));		
+		//startActivity(new Intent(this,AddFriendActivity.class));
+		if (et.getVisibility()==View.INVISIBLE){
+			et.setVisibility(View.VISIBLE);
+			et.requestFocus();
+			InputMethodManager imm = (InputMethodManager)getSystemService(INPUT_METHOD_SERVICE);
+			imm.showSoftInput(et, InputMethodManager.HIDE_NOT_ALWAYS);
+			searched=true;
+		}else{
+			et.setVisibility(View.INVISIBLE);
+			gv.setAdapter(new UserGridAdapter(this, getAddUsers()));
+			searched=true;
+		}		
+	}
+	
+	@Override
+	public void onBackClick() {
+		if (!searched){
+			super.onBackClick();
+		}else{
+			searched=false;
+			et.setVisibility(View.INVISIBLE);
+			gv.setAdapter(new UserGridAdapter(this, getUsers()));
+		}
+		
 	}
 
 }

@@ -8,6 +8,7 @@ import java.util.Map;
 import com.example.d2_project.data.User;
 
 import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.opengl.Visibility;
 import android.os.Bundle;
@@ -15,6 +16,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
@@ -30,15 +32,27 @@ public class UserActivity extends BaseActivity{
 	private Button btn_del;
 	private Button btn_talk;
 	private Button btn_map;
+	private ImageView iv;
 	private String[] roads=new String[]{"一号路","二号路","三号路","四号路","五号路"};
-	private User u;
+	private User u = null;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_user);
 		Intent intent=getIntent();
-		u=(User)intent.getExtras().getSerializable("user");
+		if (intent.getExtras()!=null)
+			u=(User)intent.getExtras().getSerializable("user");
+		if (u==null){
+			u=new User();
+			u.face="@drawable/face"+233;
+			u.name="用户名";
+			u.money=(int)(Math.random()*10000);
+			u.point=(int)(Math.random()*10000);
+			u.level=(int)(Math.random()*10);
+			u.isFriend=false;
+			u.isSelf=true;
+		}
 		tv_name=(TextView)findViewById(R.id.textView2);
 		tv_money=(TextView)findViewById(R.id.textView4);
 		tv_point=(TextView)findViewById(R.id.textView6);
@@ -48,9 +62,10 @@ public class UserActivity extends BaseActivity{
 		btn_del=(Button)findViewById(R.id.button2);
 		btn_talk=(Button)findViewById(R.id.button3);
 		btn_map=(Button)findViewById(R.id.button4);
+		iv=(ImageView)findViewById(R.id.imageView1);
 		u.point=0;
-		lv.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, roads));
-		
+		iv.setImageResource(Util.getResourceId(getResources(), u.face));
+		lv.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, roads));		
 		lv.setAdapter(new SimpleAdapter(this,getRoadsInfo(),R.layout.item_road
 				,new String[]{"name","info"},new int[]{R.id.textView1,R.id.textView2}));
 			
@@ -65,15 +80,25 @@ public class UserActivity extends BaseActivity{
 		}else{
 			btn_add.setVisibility(View.VISIBLE);
 			btn_del.setVisibility(View.GONE);
+		}		
+		
+		if (u.isSelf){
+			btn_del.setVisibility(View.GONE);
+			btn_add.setVisibility(View.GONE);
 		}
-		
-		
 		
 		btn_add.setOnClickListener(new OnClickListener() {			
 			@Override
 			public void onClick(View v) {
 				new AlertDialog.Builder(UserActivity.this).setMessage("确定添加 "+u.name.trim()+" 作为您的好友？")
-				.setPositiveButton("是", null).setNegativeButton("否", null).show();
+				.setPositiveButton("是", new DialogInterface.OnClickListener() {					
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						u.isFriend=true;
+						btn_add.setVisibility(View.GONE);
+						btn_del.setVisibility(View.VISIBLE);
+					}
+				}).setNegativeButton("否", null).show();
 			}
 		});
 		
@@ -81,7 +106,14 @@ public class UserActivity extends BaseActivity{
 			@Override
 			public void onClick(View v) {
 				new AlertDialog.Builder(UserActivity.this).setMessage("确定将 "+u.name.trim()+" 从您的好友好友中删除")
-				.setPositiveButton("是", null).setNegativeButton("否", null).show();
+				.setPositiveButton("是", new DialogInterface.OnClickListener() {					
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						u.isFriend=false;
+						btn_add.setVisibility(View.VISIBLE);
+						btn_del.setVisibility(View.GONE);
+					}
+				}).setNegativeButton("否", null).show();
 			}
 		});
 		
@@ -112,9 +144,9 @@ public class UserActivity extends BaseActivity{
 	private List<Map<String,String>> getRoadsInfo(){
 		List<Map<String,String>> list=new ArrayList<Map<String,String>>();		
 		for(int i=0;i<10;++i){
-			int p=(int)(Math.random()*9999);
+			int p=(int)(Math.random()*10000);
 			u.point+=p;			
-			list.add(buildInfo("道路名"+p, "积分:"+p));		
+			list.add(buildInfo("道路"+i+"(这里是道路名)", "积分:"+p));		
 		}
 		return list;
 	}

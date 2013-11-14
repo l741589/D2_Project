@@ -12,4 +12,5 @@ public class User implements Serializable{
 	public int level;
 	public boolean isWhiteListed = false;
 	public boolean isFriend = false;
+	public boolean isSelf = false;
 }

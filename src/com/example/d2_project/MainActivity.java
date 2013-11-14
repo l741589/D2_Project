@@ -43,8 +43,9 @@ public class MainActivity extends BaseActivity implements OnClickListener{
 		case R.id.button1:return FriendActivity.class;
 		case R.id.button2:return NeighborActivity.class;
 		case R.id.button3:return StoreActivity.class;
-		case R.id.button4:return ItemActivity.class;
+		case R.id.button4:return FriendMapActivity.class;
 		case R.id.button5:return AchievementActivity.class;
+		case R.id.button10:return UserActivity.class;
 		}
 		return null;
 	}
