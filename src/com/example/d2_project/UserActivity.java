@@ -45,7 +45,7 @@ public class UserActivity extends BaseActivity{
 		if (u==null){
 			u=new User();
 			u.face="@drawable/face"+233;
-			u.name="Usrename";
+			u.name="Username";
 			u.money=(int)(Math.random()*10000);
 			u.point=(int)(Math.random()*10000);
 			u.level=(int)(Math.random()*10);
@@ -128,6 +128,14 @@ public class UserActivity extends BaseActivity{
 			public void onClick(View v) {
 				Intent i=new Intent(UserActivity.this,RoadMaskedMapActivity.class);
 				i.putExtra("user",u);
+				startActivity(i);
+			}
+		});
+		
+		iv.setOnClickListener(new OnClickListener() {			
+			@Override
+			public void onClick(View v) {
+				Intent i=new Intent(UserActivity.this,CarModelActivity.class);
 				startActivity(i);
 			}
 		});

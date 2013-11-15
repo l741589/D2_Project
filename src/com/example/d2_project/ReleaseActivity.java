@@ -32,9 +32,9 @@ public class ReleaseActivity extends BaseActivity implements OnClickListener {
 
 	@Override
 	public void onClick(View v) {
-		// TODO Auto-generated method stub
-		Toast.makeText(ReleaseActivity.this, "发布成功", Toast.LENGTH_SHORT);
-		ReleaseActivity.this.finish();
+		Toast.makeText(this, "success", Toast.LENGTH_SHORT).show();
+		//finish();
+		onBackClick();
 	}
 
 }

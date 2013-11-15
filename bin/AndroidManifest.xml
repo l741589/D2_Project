@@ -36,6 +36,7 @@
         <activity android:name="com.example.d2_project.RankingListActivity"></activity>
         <activity android:name="com.example.d2_project.ParkingActivity"></activity>
         <activity android:name="com.example.d2_project.ReleaseActivity"></activity>
+        <activity android:name="com.example.d2_project.CarModelActivity" android:screenOrientation="landscape"></activity>
     </application>
 
 </manifest>
