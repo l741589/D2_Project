@@ -22,7 +22,6 @@ public class ParkingActivity extends BaseActivity implements OnItemLongClickList
 
 	private GridView gv;
 	private String userName ="";
-	private boolean[] isPined;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -32,15 +31,10 @@ public class ParkingActivity extends BaseActivity implements OnItemLongClickList
 		gv.setAdapter(new UserGridAdapter(this, getUsers()));
 		gv.setOnItemLongClickListener(this);
 		gv.setOnItemClickListener(this);
-		
-		for(int i = 0; i < isPined.length; i++) {
-			isPined[i] = false;
-		}
 	}
 
 	private User[] getUsers(){
 		User[] us=new User[256];
-		isPined=new boolean[us.length];
 		for (int i=0;i<us.length;++i){
 			User u=new User();
 			us[i]=u;
@@ -50,6 +44,7 @@ public class ParkingActivity extends BaseActivity implements OnItemLongClickList
 			u.point=(int)(Math.random()*10000);
 			u.level=(int)(Math.random()*10);
 			u.isFriend=true;
+			u.isFriend=false;
 		}
 		return us;
 	}
@@ -74,6 +69,12 @@ public class ParkingActivity extends BaseActivity implements OnItemLongClickList
 			long arg3) {
 		// TODO Auto-generated method stub
 		final int position = arg2;
+		final UserGridAdapter adapter=(UserGridAdapter)arg0.getAdapter();
+		final User u=(User)adapter.getItem(position);
+		if (u.isPined){ 
+			Toast.makeText(ParkingActivity.this, "贴条失败，你已经给 "+userName+" 贴过条了", Toast.LENGTH_SHORT).show();
+			return true;
+		}
 		AlertDialog.Builder builder = new Builder(ParkingActivity.this);
 		userName = ((TextView)v.findViewById(R.id.textView1)).getText().toString().trim();
 		builder.setMessage("你是否要给 "+userName+" 贴罚条").setTitle("贴罚条");
@@ -81,22 +82,15 @@ public class ParkingActivity extends BaseActivity implements OnItemLongClickList
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				dialog.dismiss();
-				if( !isPined[position] ) {
+				if( !u.isPined) {
 					Toast.makeText(ParkingActivity.this, "你已经成功给 "+userName+" 贴条", Toast.LENGTH_SHORT).show();
-					isPined[position] = true;
-				}else {
-					Toast.makeText(ParkingActivity.this, "贴条失败，你已经给 "+userName+" 贴过条了", Toast.LENGTH_SHORT).show();
+					u.isPined = true;
+					adapter.notifyDataSetChanged();
 				}
 			}
 		});
-		builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
-			@Override
-			public void onClick(DialogInterface dialog, int which) {
-				dialog.dismiss();
-			}
-		});
-		builder.create().show();
-		
+		builder.setNegativeButton("取消", null);
+		builder.create().show();		
 		return true;
 	}
 

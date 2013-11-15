@@ -46,7 +46,7 @@ public class StoreActivity extends BaseActivity implements OnTouchListener,OnGes
 		tv2=(TextView)findViewById(R.id.textView2);
 		tv3=(TextView)findViewById(R.id.textView3);
 		tv4=(TextView)findViewById(R.id.textView4);
-		tv1.setTextColor(Color.RED);
+		tv1.setTextColor(getResources().getColor(R.color.title_selected));
 		vf=(ViewFlipper)findViewById(R.id.viewFlipper1);
 		gv1=(GridView)findViewById(R.id.gridView1);
 		gv2=(GridView)findViewById(R.id.gridView2);
@@ -245,9 +245,9 @@ public class StoreActivity extends BaseActivity implements OnTouchListener,OnGes
 			vf.addView(gv1);
 			vf.showNext();
 		}	
-		tv1.setTextColor(Color.RED);
-		tv3.setTextColor(Color.BLACK);
-		tv4.setTextColor(Color.BLACK);
+		tv1.setTextColor(getResources().getColor(R.color.title_selected));
+		tv3.setTextColor(getResources().getColor(R.color.title));
+		tv4.setTextColor(getResources().getColor(R.color.title));
 	}
 	
 	private void show2(){
@@ -266,9 +266,9 @@ public class StoreActivity extends BaseActivity implements OnTouchListener,OnGes
 			vf.addView(gv2);
 			vf.showNext();
 		}		
-		tv1.setTextColor(Color.BLACK);
-		tv3.setTextColor(Color.RED);
-		tv4.setTextColor(Color.BLACK);
+		tv1.setTextColor(getResources().getColor(R.color.title));
+		tv3.setTextColor(getResources().getColor(R.color.title_selected));
+		tv4.setTextColor(getResources().getColor(R.color.title));
 	}
 	
 	private void show3(){
@@ -285,9 +285,9 @@ public class StoreActivity extends BaseActivity implements OnTouchListener,OnGes
 			vf.addView(gv3);
 			vf.showNext();
 		}
-		tv1.setTextColor(Color.BLACK);
-		tv3.setTextColor(Color.BLACK);
-		tv4.setTextColor(Color.RED);
+		tv1.setTextColor(getResources().getColor(R.color.title));
+		tv3.setTextColor(getResources().getColor(R.color.title));
+		tv4.setTextColor(getResources().getColor(R.color.title_selected));
 	}	
 	
 

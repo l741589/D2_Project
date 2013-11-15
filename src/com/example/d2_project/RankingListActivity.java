@@ -77,7 +77,6 @@ public class RankingListActivity extends BaseActivity implements OnItemClickList
 
 	@Override
 	public void onItemClick(AdapterView<?> parent, View arg1, int position, long arg3) {
-		// TODO Auto-generated method stub
 		Intent i=new Intent(this,UserActivity.class);
 		i.putExtra("user",((RankingList)parent.getAdapter().getItem(position)).user);
 		startActivity(i);	

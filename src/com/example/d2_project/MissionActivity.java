@@ -38,7 +38,7 @@ public class MissionActivity extends BaseActivity implements OnClickListener, On
 		
 		tv1 = (TextView)findViewById(R.id.textView1);
 		tv2 = (TextView)findViewById(R.id.textView2);
-		tv1.setTextColor(Color.RED);
+		tv1.setTextColor(getResources().getColor(R.color.title_selected));
 		vf = (ViewFlipper) findViewById(R.id.viewFlipper1);
 		lv1 = (ListView) findViewById(R.id.listView1);
 		lv2 = (ListView) findViewById(R.id.listView2);
@@ -98,8 +98,8 @@ public class MissionActivity extends BaseActivity implements OnClickListener, On
 		vf.setInAnimation(getApplicationContext(), R.anim.push_right_in);   
 		vf.setOutAnimation(getApplicationContext(), R.anim.push_right_out);  
 		vf.showNext();
-		tv1.setTextColor(Color.RED);
-		tv2.setTextColor(Color.BLACK);
+		tv1.setTextColor(getResources().getColor(R.color.title_selected));
+		tv2.setTextColor(getResources().getColor(R.color.title));
 	}
 
 	private void show2() {
@@ -108,8 +108,8 @@ public class MissionActivity extends BaseActivity implements OnClickListener, On
 		vf.setInAnimation(getApplicationContext(), R.anim.push_left_in);   
 		vf.setOutAnimation(getApplicationContext(), R.anim.push_left_out);		
 		vf.showPrevious();
-		tv1.setTextColor(Color.BLACK);
-		tv2.setTextColor(Color.RED);	
+		tv1.setTextColor(getResources().getColor(R.color.title));
+		tv2.setTextColor(getResources().getColor(R.color.title_selected));	
 	}
 
 	@Override

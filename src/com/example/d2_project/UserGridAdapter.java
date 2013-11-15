@@ -1,5 +1,8 @@
 package com.example.d2_project;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import android.app.Activity;
 import android.content.Context;
 import android.text.SpannableString;
@@ -17,6 +20,7 @@ import com.example.d2_project.data.User;
 class UserGridAdapter extends BaseAdapter{
 	private User[] users;
 	private Context c;
+	private Map<Integer,Integer> colormap=new HashMap<Integer, Integer>();
 	
 	public UserGridAdapter(Context context,User[] users){
 		c=context;
@@ -45,6 +49,7 @@ class UserGridAdapter extends BaseAdapter{
 		TextView tv=(TextView) v.findViewById(R.id.textView1);
 		ImageView iv=(ImageView)v.findViewById(R.id.imageView1);
 		LinearLayout ll=(LinearLayout)v.findViewById(R.id.LinearLayout2);
+
 		User u=users[position];		
 		if (u.isWhiteListed){
 			SpannableString text=new SpannableString(" "+u.name);
@@ -52,10 +57,11 @@ class UserGridAdapter extends BaseAdapter{
 			tv.setText(text);
 		}else{
 			tv.setText(u.name);
-		}
-		
+		}		
+		if (colormap.get(position)==null) colormap.put(position, ColorUtil.getRandomColor());
 		iv.setImageResource(Util.getResourceId(c.getResources(), u.face));
-		ll.setBackgroundColor(ColorUtil.getRandomColor());
+		ll.setBackgroundColor(colormap.get(position));
+		if (u.isPined) ll.setAlpha(0.2f); else ll.setAlpha(1f); 
 		return v;
 	} 
 }

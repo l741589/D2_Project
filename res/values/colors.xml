@@ -2,5 +2,7 @@
 <resources>
     <color name="titlebar">#d2d2d2</color>
     <color name="title">#000000</color>
+    <color name="title_selected">#D9742B</color>
+    <color name="background">#F0F3F5</color>
     
 </resources>
