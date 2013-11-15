@@ -11,7 +11,7 @@ import android.widget.EditText;
 import android.widget.GridView;
 
 import com.example.d2_project.data.User;
-
+@Deprecated
 public class AddFriendActivity extends BaseActivity implements OnItemClickListener {
 
 	GridView gv;

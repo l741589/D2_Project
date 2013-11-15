@@ -10,7 +10,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.Toast;
 
-public class ReleaseActivity extends Activity implements OnClickListener {
+public class ReleaseActivity extends BaseActivity implements OnClickListener {
 
 	private Button btn;
 	

@@ -52,7 +52,7 @@
                 android:padding="2dp"
                 android:text="好友"
                 android:textColor="#ffffff"
-                android:textSize="32sp" />
+                android:textSize="@dimen/activity_main_fontsize" />
 
             <Button
                 android:id="@+id/button2"
@@ -62,7 +62,7 @@
                 android:background="@drawable/btnface1"
                 android:text="附近"
                 android:textColor="#ffffff"
-                android:textSize="32sp" />
+                android:textSize="@dimen/activity_main_fontsize" />
 
             <Button
                 android:id="@+id/button3"
@@ -72,7 +72,7 @@
                 android:background="@drawable/btnface2"
                 android:text="道具"
                 android:textColor="#ffffff"
-                android:textSize="32sp" />
+                android:textSize="@dimen/activity_main_fontsize" />
 
             <Button
                 android:id="@+id/button4"
@@ -82,7 +82,7 @@
                 android:background="@drawable/btnface3"
                 android:text="地图"
                 android:textColor="#ffffff"
-                android:textSize="32sp" />
+                android:textSize="@dimen/activity_main_fontsize" />
 
             <Button
                 android:id="@+id/button5"
@@ -92,7 +92,7 @@
                 android:background="@drawable/btnface6"
                 android:text="成就"
                 android:textColor="#ffffff"
-                android:textSize="32sp" />
+                android:textSize="@dimen/activity_main_fontsize" />
         </LinearLayout>
 
         <LinearLayout
@@ -107,9 +107,9 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@drawable/btnface4"
-                android:text="Button"
+                android:text="任务"
                 android:textColor="#ffffff"
-                android:textSize="32sp" />
+                android:textSize="@dimen/activity_main_fontsize" />
 
             <Button
                 android:id="@+id/button7"
@@ -117,9 +117,9 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@drawable/btnface5"
-                android:text="Button"
+                android:text="停车"
                 android:textColor="#ffffff"
-                android:textSize="32sp" />
+                android:textSize="@dimen/activity_main_fontsize" />
 
             <Button
                 android:id="@+id/button8"
@@ -127,9 +127,9 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@drawable/btnface6"
-                android:text="Button"
+                android:text="排行"
                 android:textColor="#ffffff"
-                android:textSize="32sp" />
+                android:textSize="@dimen/activity_main_fontsize" />
 
             <Button
                 android:id="@+id/button9"
@@ -137,9 +137,9 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@drawable/btnface7"
-                android:text="Button"
+                android:text="信息\n发布"
                 android:textColor="#ffffff"
-                android:textSize="32sp" />
+                android:textSize="@dimen/activity_main_fontsize" />
 
             <Button
                 android:id="@+id/button10"
@@ -147,9 +147,9 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@drawable/btnface0"
-                android:text="我"
+                android:text="我的\n信息"
                 android:textColor="#ffffff"
-                android:textSize="32sp" />
+                android:textSize="@dimen/activity_main_fontsize" />
         </LinearLayout>
 
     </LinearLayout>

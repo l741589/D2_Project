@@ -21,7 +21,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
 
-public class MissionActivity extends Activity implements OnClickListener, OnGestureListener, OnTouchListener, OnItemClickListener {
+public class MissionActivity extends BaseActivity implements OnClickListener, OnGestureListener, OnTouchListener, OnItemClickListener {
 
 	private TextView tv1;
 	private TextView tv2;

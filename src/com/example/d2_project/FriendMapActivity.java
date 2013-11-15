@@ -13,7 +13,7 @@ public class FriendMapActivity extends BaseActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_map_roadmasked);
+		setContentView(R.layout.activity_map_friend);
 		Intent intent=getIntent();
 		//u=(User)intent.getExtras().getSerializable("user");
 		tv=(TextView)findViewById(R.id.textView1);

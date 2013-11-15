@@ -14,7 +14,6 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:screenOrientation="landscape"
             android:name="com.example.d2_project.MainActivity"
             android:label="@string/app_name" >
            <intent-filter>
@@ -23,35 +22,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="FriendActivity"></activity>
-        <activity android:name="AddFriendActivity"></activity>
-        <activity android:name="UserActivity"></activity>
-        <activity android:name="RoadMaskedMapActivity"></activity>
-        <activity android:name="NeighborActivity"></activity>
-        <activity android:name="StoreActivity"></activity>
-        <activity android:name="ItemActivity"></activity>
-        <activity android:name="AchievementActivity"></activity>
-        <activity android:name="FriendMapActivity"></activity>
-		<activity
-            android:name="com.example.d2_project.MissionActivity"
-            android:screenOrientation="landscape" >
-        </activity>
-        <activity
-            android:name="com.example.d2_project.MissionOnMapActivity"
-            android:screenOrientation="landscape" >
-        </activity>
-        <activity
-            android:name="com.example.d2_project.RankingListActivity"
-            android:screenOrientation="landscape" >
-        </activity>
-        <activity
-            android:name="com.example.d2_project.ParkingActivity"
-            android:screenOrientation="landscape" >
-        </activity>
-        <activity
-            android:name="com.example.d2_project.ReleaseActivity"
-            android:screenOrientation="landscape" >
-        </activity>
+        <activity android:name="com.example.d2_project.FriendActivity"></activity>
+        <activity android:name="com.example.d2_project.AddFriendActivity"></activity>
+        <activity android:name="com.example.d2_project.UserActivity"></activity>
+        <activity android:name="com.example.d2_project.RoadMaskedMapActivity"></activity>
+        <activity android:name="com.example.d2_project.NeighborActivity"></activity>
+        <activity android:name="com.example.d2_project.StoreActivity"></activity>
+        <activity android:name="com.example.d2_project.ItemActivity"></activity>
+        <activity android:name="com.example.d2_project.AchievementActivity"></activity>
+        <activity android:name="com.example.d2_project.FriendMapActivity"></activity>
+		<activity android:name="com.example.d2_project.MissionActivity"></activity>
+        <activity android:name="com.example.d2_project.MissionOnMapActivity"></activity>
+        <activity android:name="com.example.d2_project.RankingListActivity"></activity>
+        <activity android:name="com.example.d2_project.ParkingActivity"></activity>
+        <activity android:name="com.example.d2_project.ReleaseActivity"></activity>
     </application>
 
 </manifest>

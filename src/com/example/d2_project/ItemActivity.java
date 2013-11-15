@@ -12,6 +12,7 @@ import android.widget.*;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.RadioGroup.OnCheckedChangeListener;
 
+@Deprecated
 public class ItemActivity extends BaseActivity implements OnItemClickListener{
 	
 	private TextView tv1;

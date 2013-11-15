@@ -14,7 +14,7 @@ import com.example.d2_project.data.Achievement;
 import com.example.d2_project.data.RankingList;
 import com.example.d2_project.data.User;
 
-public class RankingListActivity extends Activity implements OnItemClickListener{
+public class RankingListActivity extends BaseActivity implements OnItemClickListener{
 
 	private ListView lv;
 	

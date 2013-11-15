@@ -6,9 +6,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.d2_project.data.Achievement;
+import com.example.d2_project.data.ColorUtil;
 import com.example.d2_project.data.Mission;
 
 public class MissionAdapter extends BaseAdapter {
@@ -44,6 +46,7 @@ public class MissionAdapter extends BaseAdapter {
 		// TODO Auto-generated method stub
 		View v=convertView;		
 		if (v==null) v=((Activity)c).getLayoutInflater().inflate(R.layout.item_achievement, null);
+		LinearLayout ll=(LinearLayout)v.findViewById(R.id.LinearLayout2);
 		ImageView iv=(ImageView)v.findViewById(R.id.imageView1);
 		TextView tv1=(TextView)v.findViewById(R.id.textView1);
 		TextView tv2=(TextView)v.findViewById(R.id.textView2);
@@ -51,6 +54,7 @@ public class MissionAdapter extends BaseAdapter {
 		iv.setImageResource(Util.getResourceId(c.getResources(), m.icon));
 		tv1.setText(m.name);
 		tv2.setText(m.description);
+		ll.setBackgroundColor(ColorUtil.getRandomColor());
 		return v;
 	}
 

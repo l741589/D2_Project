@@ -18,7 +18,7 @@ import android.widget.GridView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class ParkingActivity extends Activity implements OnItemLongClickListener, OnItemClickListener{
+public class ParkingActivity extends BaseActivity implements OnItemLongClickListener, OnItemClickListener{
 
 	private GridView gv;
 	private String userName ="";
@@ -49,7 +49,6 @@ public class ParkingActivity extends Activity implements OnItemLongClickListener
 			u.money=(int)(Math.random()*10000);
 			u.point=(int)(Math.random()*10000);
 			u.level=(int)(Math.random()*10);
-			if (Math.random()<0.1) u.isWhiteListed=true;
 			u.isFriend=true;
 		}
 		return us;
