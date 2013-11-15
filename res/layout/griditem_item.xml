@@ -16,6 +16,7 @@
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:layout_gravity="center_vertical"
+            android:layout_marginRight="2dp"
             android:scaleType="fitXY"
             android:src="@drawable/ic_launcher" />
 

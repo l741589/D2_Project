@@ -27,7 +27,7 @@
             android:id="@+id/textView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="发布信息"
+            android:text="Post Information"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="@color/title" />
 
@@ -59,7 +59,9 @@
             android:layout_weight="0"
             android:background="@drawable/btnface8"
             android:gravity="center_vertical|center_horizontal"
-            android:text="发布" />
+            android:text="Post"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 

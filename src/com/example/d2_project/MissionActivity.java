@@ -62,8 +62,8 @@ public class MissionActivity extends BaseActivity implements OnClickListener, On
 		for (int i=0;i<ret.length;++i){
 			Mission m=new Mission();
 			m.icon=String.format("@drawable/icon%d",(int)(Math.random()*42));
-			m.name="任务"+i;
-			m.description = "我是 "+m.name+" 的描述信息";
+			m.name="Task"+i;
+			m.description = "I am the description of the task \""+m.name+"\"";
 			ret[i] = m;
 		}
 		return ret;

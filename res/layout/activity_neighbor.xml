@@ -28,7 +28,7 @@
             android:id="@+id/textView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="附近的用户"
+            android:text="Nearby"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="@color/title" />
 

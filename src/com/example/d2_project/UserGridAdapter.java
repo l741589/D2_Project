@@ -50,10 +50,11 @@ class UserGridAdapter extends BaseAdapter{
 		ImageView iv=(ImageView)v.findViewById(R.id.imageView1);
 		LinearLayout ll=(LinearLayout)v.findViewById(R.id.LinearLayout2);
 
-		User u=users[position];		
+		User u=users[position];
 		if (u.isWhiteListed){
 			SpannableString text=new SpannableString(" "+u.name);
-			text.setSpan(new ImageSpan(c, R.drawable.ic_whitelisted),0,1,SpannableString.SPAN_EXCLUSIVE_EXCLUSIVE);
+			ImageSpan span=new ImageSpan(c, R.drawable.ic_whitelisted);
+			text.setSpan(span,0,1,SpannableString.SPAN_EXCLUSIVE_EXCLUSIVE);
 			tv.setText(text);
 		}else{
 			tv.setText(u.name);

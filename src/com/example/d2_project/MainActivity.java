@@ -29,14 +29,14 @@ public class MainActivity extends BaseActivity implements OnClickListener{
 		findViewById(R.id.button10).setOnClickListener(this);
 		
 		AlertDialog.Builder builder = new Builder(MainActivity.this);
-		builder.setMessage("这里是免责声明。。。。").setTitle("免责声明");
-		builder.setPositiveButton("同意", new DialogInterface.OnClickListener() {
+		builder.setMessage("Here is body of the agreement").setTitle("Agreement");
+		builder.setPositiveButton("Agree", new DialogInterface.OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				dialog.dismiss();
 			}
 		});
-		builder.setNegativeButton("拒绝", new DialogInterface.OnClickListener() {
+		builder.setNegativeButton("Disagree", new DialogInterface.OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				dialog.dismiss();

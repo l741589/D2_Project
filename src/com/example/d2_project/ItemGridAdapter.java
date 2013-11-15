@@ -1,7 +1,9 @@
 package com.example.d2_project;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import android.app.Activity;
 import android.content.Context;
@@ -24,6 +26,7 @@ import com.example.d2_project.data.User;
 class ItemGridAdapter extends BaseAdapter{
 	private List<Item> items;
 	private Context c;
+	private Map<Integer,Integer> colormap=new HashMap<Integer, Integer>();
 	
 	public void remove(Item item){
 		items.remove(item);
@@ -62,7 +65,8 @@ class ItemGridAdapter extends BaseAdapter{
 		Item u=items.get(position);
 		tv1.setText(u.name);
 		if (u.count>0){
-			tv2.setText(String.format("Ê£Óà%d¸ö", u.count));
+			if (u.count==1) tv2.setText(String.format("%d item left", u.count));
+			else tv2.setText(String.format("%d items left", u.count));			
 		}else{
 			tv2.setVisibility(View.GONE);
 		}
@@ -70,15 +74,12 @@ class ItemGridAdapter extends BaseAdapter{
 		if (u.isOwned){
 			tv3.setVisibility(View.GONE);
 		}else{
-			tv3.setText(String.format("£¤%.2f", u.price));
+			tv3.setText(String.format("$%.2f", u.price));
 		}
 		
+		if (colormap.get(position)==null) colormap.put(position, ColorUtil.getRandomColor());
 		iv.setImageResource(Util.getResourceId(c.getResources(), u.icon));
-		
-		
-		//Bitmap b=ImgUtil.drawable2Bitmap(iv.getDrawable());
-		//ll.setBackgroundColor(b.getPixel(b.getWidth()/2, b.getHeight()/2));
-		ll.setBackgroundColor(ColorUtil.getRandomColor());
+		ll.setBackgroundColor(colormap.get(position));
 		return v;
 	} 
 }

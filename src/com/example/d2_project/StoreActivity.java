@@ -51,7 +51,7 @@ public class StoreActivity extends BaseActivity implements OnTouchListener,OnGes
 		gv1=(GridView)findViewById(R.id.gridView1);
 		gv2=(GridView)findViewById(R.id.gridView2);
 		gv3=(GridView)findViewById(R.id.gridView3);
-		tv2.setText(String.format("￥%.2f  ", money));
+		tv2.setText(String.format("$%.2f  ", money));
 		tv1.setOnClickListener(this);
 		tv3.setOnClickListener(this);
 		tv4.setOnClickListener(this);
@@ -75,11 +75,11 @@ public class StoreActivity extends BaseActivity implements OnTouchListener,OnGes
 		for (int i=0;i<items.length;++i){
 			items[i]=new Item();
 			Item t=items[i];
-			t.name="道具"+i;
+			t.name="Item"+i;
 			t.icon="@drawable/icon"+(int)(Math.random()*42);
 			t.count=0;
 			t.price=Math.random()*50;
-			t.decription="我是 "+t.name+" 的描述信息。";
+			t.decription="I am the description of the item \""+t.name+"\"";
 		}
 		return items;
 	}
@@ -89,11 +89,11 @@ public class StoreActivity extends BaseActivity implements OnTouchListener,OnGes
 		for (int i=0;i<items.length;++i){
 			items[i]=new Item();
 			Item t=items[i];
-			t.name="道具"+i;
+			t.name="Item"+i;
 			t.icon="@drawable/icon"+(int)(Math.random()*42);
 			t.count=(int) (Math.random()*10)+1;
 			t.price=Math.random()*100;
-			t.decription="我是 "+t.name+" 的描述信息。";
+			t.decription="I am the description of the item \""+t.name+"\"";
 		}
 		return items;
 	}
@@ -103,11 +103,11 @@ public class StoreActivity extends BaseActivity implements OnTouchListener,OnGes
 		for (int i=0;i<items.length;++i){
 			items[i]=new Item();
 			Item t=items[i];
-			t.name="道具"+i;
+			t.name="Item"+i;
 			t.icon="@drawable/icon"+(int)(Math.random()*42);
 			t.count=(int)(Math.random()*10)+1;
 			t.price=Math.random()*50;
-			t.decription="我是 "+t.name+" 的描述信息。";
+			t.decription="I am the description of the item \""+t.name+"\"";
 			t.isOwned=true;
 		}
 		return items;
@@ -117,19 +117,20 @@ public class StoreActivity extends BaseActivity implements OnTouchListener,OnGes
 		@Override
 		public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
 			final Item t=(Item)parent.getAdapter().getItem(position);
-			new AlertDialog.Builder(StoreActivity.this).setTitle("是否买入此道具？")
+			new AlertDialog.Builder(StoreActivity.this).setTitle("Do you want to buy the item?")
 			.setMessage(t.name+"\n"+t.decription)
-			.setPositiveButton("是", new DialogInterface.OnClickListener() {				
+			.setPositiveButton("Yes", new DialogInterface.OnClickListener() {				
 				@Override
 				public void onClick(DialogInterface dialog, int which) {
 					if (money>=t.price){
 						money-=t.price;
-						tv2.setText(String.format("￥%.2f  ", money));
+						tv2.setText(String.format("$%.2f  ", money));
+						Toast.makeText(StoreActivity.this, "Success", Toast.LENGTH_SHORT).show();
 					}else{
-						Toast.makeText(StoreActivity.this, "你没有足够的金币购买此道具", Toast.LENGTH_SHORT).show();
+						Toast.makeText(StoreActivity.this, "Insufficient gold.", Toast.LENGTH_SHORT).show();
 					}					
 				}
-			}).setNegativeButton("否",null).show();		
+			}).setNegativeButton("No",null).show();		
 		}
 	};
 	
@@ -139,22 +140,23 @@ public class StoreActivity extends BaseActivity implements OnTouchListener,OnGes
 			final Item t=(Item)parent.getAdapter().getItem(position);
 			final AdapterView<?> Parent=parent;
 			final View V=v;
-			new AlertDialog.Builder(StoreActivity.this).setTitle("是否买入此道具？")
+			new AlertDialog.Builder(StoreActivity.this).setTitle("Do you wang to buy the item?")
 			.setMessage(t.name+"\n"+t.decription)
-			.setPositiveButton("是", new DialogInterface.OnClickListener() {				
+			.setPositiveButton("Yes", new DialogInterface.OnClickListener() {				
 				@Override
 				public void onClick(DialogInterface dialog, int which) {
 					if (money>=t.price){
 						money-=t.price;
 						t.count-=1;
 						if (t.count==0) ((ItemGridAdapter)Parent.getAdapter()).remove(t);
-						tv2.setText(String.format("￥%.2f  ", money));						
+						tv2.setText(String.format("$%.2f  ", money));						
 						((ItemGridAdapter)Parent.getAdapter()).notifyDataSetChanged();
+						Toast.makeText(StoreActivity.this, "Success", Toast.LENGTH_SHORT).show();
 					}else{
-						Toast.makeText(StoreActivity.this, "你没有足够的金币购买此道具", Toast.LENGTH_SHORT).show();
+						Toast.makeText(StoreActivity.this, "Insufficient gold.", Toast.LENGTH_SHORT).show();
 					}					
 				}
-			}).setNegativeButton("否",null).show();		
+			}).setNegativeButton("No",null).show();		
 		}
 	};
 	
@@ -163,35 +165,38 @@ public class StoreActivity extends BaseActivity implements OnTouchListener,OnGes
 		public void onItemClick(AdapterView<?> parent, View v, int position,long id) {
 			final ItemGridAdapter adapter=(ItemGridAdapter)parent.getAdapter();
 			final Item t=(Item)adapter.getItem(position);			
-			new AlertDialog.Builder(StoreActivity.this).setTitle("选择你要进行的操作")
-			.setMessage(t.name+"\n"+t.decription).setPositiveButton("出售", new DialogInterface.OnClickListener() {			
+			new AlertDialog.Builder(StoreActivity.this).setTitle("Choose")
+			.setMessage(t.name+"\n"+t.decription).setPositiveButton("Sell", new DialogInterface.OnClickListener() {			
 				@Override
 				public void onClick(DialogInterface dialog, int which) {
-					new AlertDialog.Builder(StoreActivity.this).setTitle("选择出售方式")
-					.setView(getDialogView(t)).setPositiveButton("确定", new DialogInterface.OnClickListener() {					
+					new AlertDialog.Builder(StoreActivity.this).setTitle("Choose")
+					.setView(getDialogView(t)).setPositiveButton("OK", new DialogInterface.OnClickListener() {					
 						@Override
 						public void onClick(DialogInterface dialog, int which) {
 							money+=t.price*0.2;
-							tv2.setText(String.format("￥%.2f  ", money));
+							tv2.setText(String.format("$%.2f  ", money));
 							t.count-=1;
 							if (t.count==0) adapter.remove(t);
 							adapter.notifyDataSetChanged();
+							Toast.makeText(StoreActivity.this, "Success", Toast.LENGTH_SHORT).show();
 						}
-					}).setNegativeButton("取消", null).show();
+					}).setNegativeButton("Cancel", null).show();
 				}
-			}).setNeutralButton("丢弃", new DialogInterface.OnClickListener(){
+			}).setNeutralButton("Drop", new DialogInterface.OnClickListener(){
 				@Override
 				public void onClick(DialogInterface dialog, int which) {
 					t.count-=1;
 					if (t.count==0) adapter.remove(t);
 					adapter.notifyDataSetChanged();
+					Toast.makeText(StoreActivity.this, "Success", Toast.LENGTH_SHORT).show();
 				}			
-			}).setNegativeButton("使用", new DialogInterface.OnClickListener(){
+			}).setNegativeButton("Use", new DialogInterface.OnClickListener(){
 				@Override
 				public void onClick(DialogInterface dialog, int which) {
 					t.count-=1;
 					if (t.count==0) adapter.remove(t);
 					adapter.notifyDataSetChanged();
+					Toast.makeText(StoreActivity.this, "Success", Toast.LENGTH_SHORT).show();
 				}			
 			}).show();
 		}

@@ -28,8 +28,8 @@
             android:id="@+id/textView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="8dp"
-            android:text="系统商城"
+            android:layout_marginRight="16dp"
+            android:text="Shop"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="@color/title" />
 
@@ -37,8 +37,8 @@
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="8dp"
-            android:text="用户商店"
+            android:layout_marginRight="16dp"
+            android:text="Market"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="@color/title" />
 
@@ -46,7 +46,7 @@
             android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="我的道具"
+            android:text="MyItems"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="@color/title" />
 
@@ -61,7 +61,7 @@
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="￥300.00"
+            android:text="$300.00"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="@color/title" />
 

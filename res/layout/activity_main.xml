@@ -49,7 +49,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@drawable/btnface0"
-                android:text="我的\n信息"
+                android:text="Profile"
                 android:textColor="#ffffff"
                 android:textSize="@dimen/activity_main_fontsize" />
 
@@ -59,7 +59,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@drawable/btnface1"
-                android:text="地图"
+                android:text="Map"
                 android:textColor="#ffffff"
                 android:textSize="@dimen/activity_main_fontsize" />
 
@@ -69,7 +69,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@drawable/btnface2"
-                android:text="附近"
+                android:text="Nearby"
                 android:textColor="#ffffff"
                 android:textSize="@dimen/activity_main_fontsize" />
 
@@ -79,7 +79,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@drawable/btnface3"
-                android:text="停车"
+                android:text="Park"
                 android:textColor="#ffffff"
                 android:textSize="@dimen/activity_main_fontsize" />
 
@@ -89,7 +89,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@drawable/btnface0"
-                android:text="任务"
+                android:text="Task"
                 android:textColor="#ffffff"
                 android:textSize="@dimen/activity_main_fontsize" />
         </LinearLayout>
@@ -106,7 +106,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@drawable/btnface4"
-                android:text="信息\n发布"
+                android:text="Post"
                 android:textColor="#ffffff"
                 android:textSize="@dimen/activity_main_fontsize" />
 
@@ -117,7 +117,7 @@
                 android:layout_weight="1"
                 android:background="@drawable/btnface5"
                 android:padding="2dp"
-                android:text="好友"
+                android:text="Friend"
                 android:textColor="#ffffff"
                 android:textSize="@dimen/activity_main_fontsize" />
 
@@ -127,7 +127,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@drawable/btnface6"
-                android:text="道具"
+                android:text="Item"
                 android:textColor="#ffffff"
                 android:textSize="@dimen/activity_main_fontsize" />
 
@@ -137,7 +137,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@drawable/btnface7"
-                android:text="成就"
+                android:text="Badge"
                 android:textColor="#ffffff"
                 android:textSize="@dimen/activity_main_fontsize" />
 
@@ -147,7 +147,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@drawable/btnface1"
-                android:text="排行"
+                android:text="Rank"
                 android:textColor="#ffffff"
                 android:textSize="@dimen/activity_main_fontsize" />
         </LinearLayout>

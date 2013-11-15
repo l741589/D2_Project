@@ -35,11 +35,10 @@ public class RankingListActivity extends BaseActivity implements OnItemClickList
 			RankingList rankingList = new RankingList();
 			User u = new User();
 			u.face="@drawable/face"+i%254;//???????????????
-			u.name="”√ªß"+i;
+			u.name="User"+i;
 			u.money=(int)(Math.random()*10000);
 			u.point=points[i];
 			u.level=(int)(Math.random()*10);
-			if (Math.random()<0.1) u.isWhiteListed=true;
 			u.isFriend=true;
 			
 			rankingList.user = u;

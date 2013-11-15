@@ -33,7 +33,6 @@ public class UserActivity extends BaseActivity{
 	private Button btn_talk;
 	private Button btn_map;
 	private ImageView iv;
-	private String[] roads=new String[]{"一号路","二号路","三号路","四号路","五号路"};
 	private User u = null;
 	
 	@Override
@@ -46,7 +45,7 @@ public class UserActivity extends BaseActivity{
 		if (u==null){
 			u=new User();
 			u.face="@drawable/face"+233;
-			u.name="用户名";
+			u.name="Usrename";
 			u.money=(int)(Math.random()*10000);
 			u.point=(int)(Math.random()*10000);
 			u.level=(int)(Math.random()*10);
@@ -65,7 +64,7 @@ public class UserActivity extends BaseActivity{
 		iv=(ImageView)findViewById(R.id.imageView1);
 		u.point=0;
 		iv.setImageResource(Util.getResourceId(getResources(), u.face));
-		lv.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, roads));		
+		//lv.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, roads));		
 		lv.setAdapter(new SimpleAdapter(this,getRoadsInfo(),R.layout.item_road
 				,new String[]{"name","info"},new int[]{R.id.textView1,R.id.textView2}));
 			
@@ -90,37 +89,37 @@ public class UserActivity extends BaseActivity{
 		btn_add.setOnClickListener(new OnClickListener() {			
 			@Override
 			public void onClick(View v) {
-				new AlertDialog.Builder(UserActivity.this).setMessage("确定添加 "+u.name.trim()+" 作为您的好友？")
-				.setPositiveButton("是", new DialogInterface.OnClickListener() {					
+				new AlertDialog.Builder(UserActivity.this).setMessage("Do you really want to add \""+u.name.trim()+"\" to your friend list?")
+				.setPositiveButton("Yes", new DialogInterface.OnClickListener() {					
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
 						u.isFriend=true;
 						btn_add.setVisibility(View.GONE);
 						btn_del.setVisibility(View.VISIBLE);
 					}
-				}).setNegativeButton("否", null).show();
+				}).setNegativeButton("No", null).show();
 			}
 		});
 		
 		btn_del.setOnClickListener(new OnClickListener() {			
 			@Override
 			public void onClick(View v) {
-				new AlertDialog.Builder(UserActivity.this).setMessage("确定将 "+u.name.trim()+" 从您的好友好友中删除")
-				.setPositiveButton("是", new DialogInterface.OnClickListener() {					
+				new AlertDialog.Builder(UserActivity.this).setMessage("Do you really want to remove \""+u.name.trim()+"\" from your friend list?")
+				.setPositiveButton("Yes", new DialogInterface.OnClickListener() {					
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
 						u.isFriend=false;
 						btn_add.setVisibility(View.VISIBLE);
 						btn_del.setVisibility(View.GONE);
 					}
-				}).setNegativeButton("否", null).show();
+				}).setNegativeButton("No", null).show();
 			}
 		});
 		
 		btn_talk.setOnClickListener(new OnClickListener() {			
 			@Override
 			public void onClick(View v) {
-				Toast.makeText(UserActivity.this, "已为您呼叫 "+u.name.trim(), Toast.LENGTH_SHORT).show();				
+				Toast.makeText(UserActivity.this, "Calling "+u.name.trim(), Toast.LENGTH_SHORT).show();				
 			}
 		});
 		
@@ -146,7 +145,7 @@ public class UserActivity extends BaseActivity{
 		for(int i=0;i<10;++i){
 			int p=(int)(Math.random()*10000);
 			u.point+=p;			
-			list.add(buildInfo("道路"+i+"(这里是道路名)", "积分:"+p));		
+			list.add(buildInfo("Road"+i, "Point:"+p));		
 		}
 		return list;
 	}

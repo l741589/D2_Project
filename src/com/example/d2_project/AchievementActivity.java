@@ -22,8 +22,8 @@ public class AchievementActivity extends BaseActivity {
 		for (int i=0;i<ret.length;++i){
 			Achievement a=new Achievement();
 			a.icon=String.format("@drawable/icon%d",(int)(Math.random()*42));
-			a.name="成就"+i;
-			a.description = "我是 "+a.name+" 的描述信息";
+			a.name="Badge"+i;
+			a.description = "I am the description of the badge \""+a.name+"\"";
 			ret[i] = a;
 		}
 		return ret;

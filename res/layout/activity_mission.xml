@@ -27,8 +27,8 @@
             android:id="@+id/textView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="8dp"
-            android:text="系统任务"
+            android:layout_marginRight="16dp"
+            android:text="SystemTask"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="@color/title" />
 
@@ -36,7 +36,7 @@
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="神秘任务"
+            android:text="RewardTask"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="@color/title" />
 

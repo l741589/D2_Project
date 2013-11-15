@@ -39,7 +39,7 @@ public class ParkingActivity extends BaseActivity implements OnItemLongClickList
 			User u=new User();
 			us[i]=u;
 			u.face="@drawable/face"+i%254;
-			u.name="用户"+i;
+			u.name="User"+i;
 			u.money=(int)(Math.random()*10000);
 			u.point=(int)(Math.random()*10000);
 			u.level=(int)(Math.random()*10);
@@ -72,24 +72,24 @@ public class ParkingActivity extends BaseActivity implements OnItemLongClickList
 		final UserGridAdapter adapter=(UserGridAdapter)arg0.getAdapter();
 		final User u=(User)adapter.getItem(position);
 		if (u.isPined){ 
-			Toast.makeText(ParkingActivity.this, "贴条失败，你已经给 "+userName+" 贴过条了", Toast.LENGTH_SHORT).show();
+			Toast.makeText(ParkingActivity.this, "Failed, you have already ticketed \""+userName+"\".", Toast.LENGTH_SHORT).show();
 			return true;
 		}
 		AlertDialog.Builder builder = new Builder(ParkingActivity.this);
 		userName = ((TextView)v.findViewById(R.id.textView1)).getText().toString().trim();
-		builder.setMessage("你是否要给 "+userName+" 贴罚条").setTitle("贴罚条");
-		builder.setPositiveButton("贴条", new DialogInterface.OnClickListener() {
+		builder.setMessage("Do you want to write out a ticket to \""+userName+"\"").setTitle("Ticket");
+		builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				dialog.dismiss();
 				if( !u.isPined) {
-					Toast.makeText(ParkingActivity.this, "你已经成功给 "+userName+" 贴条", Toast.LENGTH_SHORT).show();
+					Toast.makeText(ParkingActivity.this, "Success", Toast.LENGTH_SHORT).show();
 					u.isPined = true;
 					adapter.notifyDataSetChanged();
 				}
 			}
 		});
-		builder.setNegativeButton("取消", null);
+		builder.setNegativeButton("No", null);
 		builder.create().show();		
 		return true;
 	}

@@ -56,7 +56,7 @@ public class FriendActivity extends BaseActivity implements OnItemClickListener,
 			User u=new User();
 			us[i]=u;
 			u.face="@drawable/face"+i%254;
-			u.name="用户"+i;
+			u.name="User"+i;
 			u.money=(int)(Math.random()*10000);
 			u.point=(int)(Math.random()*10000);
 			u.level=(int)(Math.random()*10);
@@ -73,7 +73,7 @@ public class FriendActivity extends BaseActivity implements OnItemClickListener,
 			int x=(int)(Math.random()*254);
 			us[i]=u;
 			u.face="@drawable/face"+x;
-			u.name="用户"+et.getText()+i;
+			u.name="User"+et.getText()+i;
 			u.money=(int)(Math.random()*10000);
 			u.point=(int)(Math.random()*10000);
 			u.level=(int)(Math.random()*10);
@@ -85,7 +85,7 @@ public class FriendActivity extends BaseActivity implements OnItemClickListener,
 	@Override
 	public boolean onItemLongClick(AdapterView<?> parent, View v, int position,
 			long id) {
-		tv.setText("与好友 "+((TextView)v.findViewById(R.id.textView1)).getText().toString().trim()+" 通讯中");
+		tv.setText("Communicating with "+((TextView)v.findViewById(R.id.textView1)).getText().toString().trim());
 		return true;
 	}
 
@@ -96,7 +96,7 @@ public class FriendActivity extends BaseActivity implements OnItemClickListener,
 			
 			return false;
 		case MotionEvent.ACTION_UP:
-			tv.setText("好友");
+			tv.setText("Friend");
 			return false;
 		}
 		return false;

@@ -27,7 +27,7 @@
             android:id="@+id/textView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="我地盘上的车"
+            android:text="Cars On My Roads"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="@color/title" />
 

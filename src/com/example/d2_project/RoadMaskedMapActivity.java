@@ -17,6 +17,6 @@ public class RoadMaskedMapActivity extends BaseActivity {
 		Intent intent=getIntent();
 		u=(User)intent.getExtras().getSerializable("user");
 		tv=(TextView)findViewById(R.id.textView1);
-		tv.setText(u.name.trim() +" 所占有的道路");
+		tv.setText(u.name.trim() +"'s Roads");
 	}
 }

@@ -36,7 +36,7 @@ public class NeighborActivity extends BaseActivity implements OnItemClickListene
 			User u=new User();
 			us[i]=u;
 			u.face="@drawable/face"+(int)(Math.random()*254);
-			u.name="用户"+i;
+			u.name="User"+i;
 			u.money=(int)(Math.random()*10000);
 			u.point=(int)(Math.random()*10000);
 			u.level=(int)(Math.random()*10);
@@ -48,7 +48,7 @@ public class NeighborActivity extends BaseActivity implements OnItemClickListene
 	@Override
 	public boolean onItemLongClick(AdapterView<?> parent, View v, int position,
 			long id) {
-		tv.setText("与用户 "+((TextView)v.findViewById(R.id.textView1)).getText().toString().trim()+" 通讯中");
+		tv.setText("Communicating with \""+((TextView)v.findViewById(R.id.textView1)).getText().toString().trim()+"\"");
 		return true;
 	}
 
@@ -58,7 +58,7 @@ public class NeighborActivity extends BaseActivity implements OnItemClickListene
 		case MotionEvent.ACTION_DOWN:			
 			return false;
 		case MotionEvent.ACTION_UP:
-			tv.setText("附近的用户");
+			tv.setText("NearBy");
 			return false;
 		}
 		return false;

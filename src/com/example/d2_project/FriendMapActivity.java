@@ -17,6 +17,6 @@ public class FriendMapActivity extends BaseActivity {
 		Intent intent=getIntent();
 		//u=(User)intent.getExtras().getSerializable("user");
 		tv=(TextView)findViewById(R.id.textView1);
-		tv.setText("µØÍ¼");
+		tv.setText("Map");
 	}
 }
