@@ -140,7 +140,7 @@ public class StoreActivity extends BaseActivity implements OnTouchListener,OnGes
 			final Item t=(Item)parent.getAdapter().getItem(position);
 			final AdapterView<?> Parent=parent;
 			final View V=v;
-			new AlertDialog.Builder(StoreActivity.this).setTitle("Do you wang to buy the item?")
+			new AlertDialog.Builder(StoreActivity.this).setTitle("Do you want to buy the item?")
 			.setMessage(t.name+"\n"+t.decription)
 			.setPositiveButton("Yes", new DialogInterface.OnClickListener() {				
 				@Override

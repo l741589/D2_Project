@@ -29,7 +29,7 @@ public class MainActivity extends BaseActivity implements OnClickListener{
 		findViewById(R.id.button10).setOnClickListener(this);
 		
 		AlertDialog.Builder builder = new Builder(MainActivity.this);
-		builder.setMessage("Here is body of the agreement").setTitle("Agreement");
+		builder.setMessage("Here is the body of the agreement").setTitle("Agreement");
 		builder.setPositiveButton("Agree", new DialogInterface.OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {

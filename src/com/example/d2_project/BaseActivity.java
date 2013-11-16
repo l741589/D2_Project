@@ -17,7 +17,7 @@ public class BaseActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-		
+		//overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right);   
 		//changeFonts((ViewGroup)findViewById(android.R.id.content), this);
 	}
 	
